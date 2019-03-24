@@ -1,11 +1,3 @@
-//
-//  GameScene.swift
-//  Recycle
-//
-//  Created by Seong Eun Kim on 23/03/18.
-//  Copyright © 2018 Seong Eun Kim. All rights reserved.
-//
-
 import SpriteKit
 
 class GameScene: SKScene {
