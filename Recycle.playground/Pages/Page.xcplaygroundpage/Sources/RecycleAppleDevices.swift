@@ -1,5 +1,4 @@
 import SpriteKit
-import GameplayKit
 
 class RecycleAppleDevices: SKScene {
 
@@ -25,22 +24,10 @@ class RecycleAppleDevices: SKScene {
         }
 
         let wait0 = SKAction.wait(forDuration: 0.5)
-        let wait1 = SKAction.wait(forDuration: 5.5)
-        let wait2 = SKAction.wait(forDuration: 6.5)
-        let wait3 = SKAction.wait(forDuration: 9.5)
         let appear = SKAction.fadeAlpha(to: 1, duration: 0.3)
-        let slowAppear = SKAction.fadeAlpha(to: 1, duration: 0.6)
-        let fade = SKAction.fadeAlpha(to: 0, duration: 0.3)
 
         let firstTextSequence = SKAction.sequence([wait0, appear])
-//            let secondTextSequence = SKAction.sequence([wait2, appear, wait1])
-//            let nextSequence = SKAction.sequence([wait3, appear])
-//            let balloonSequence = SKAction.sequence([slowAppear])
-
-//            balloon.run(balloonSequence)
         firstMessage?.run(firstTextSequence)
-//            secondMessage.run(secondTextSequence)
-//            nextButton.run(nextSequence)
     }
 
     func touchDown(atPoint pos: CGPoint) {
