@@ -20,11 +20,45 @@ class GameScene2: SKScene {
     private var cup : SKNode?
     private var truck : SKNode?
 
+    private var text1: SKLabelNode?
+    private var text2: SKLabelNode?
+    private var text3: SKLabelNode?
+    private var theEnd: SKLabelNode?
+    private var gameFinished : SKNode?
     
     private var background : SKNode?
     
     override func didMove(to view: SKView) {
         initialize()
+        animateText()
+    }
+
+    private func animateText() {
+        self.text1 = self.childNode(withName: "text1") as? SKLabelNode
+        self.text2 = self.childNode(withName: "text2") as? SKLabelNode
+        self.text3 = self.childNode(withName: "text3") as? SKLabelNode
+        self.gameFinished = self.childNode(withName: "gameFinished")
+        self.theEnd = self.childNode(withName: "theEnd") as? SKLabelNode
+
+        let wait0 = SKAction.wait(forDuration: 0.8)
+        let wait1 = SKAction.wait(forDuration: 3.3)
+        let fade = SKAction.fadeAlpha(to: 0, duration: 0.3)
+        let wait2 = SKAction.wait(forDuration: 4.7)
+        let appear = SKAction.fadeAlpha(to: 1, duration: 0.3)
+        let wait3 = SKAction.wait(forDuration: 8.4)
+        let thirdMessagePeriod = SKAction.wait(forDuration: 3)
+        let waitBalloon = SKAction.wait(forDuration: 11.8)
+
+        let firstTextSequence = SKAction.sequence([wait0, appear, wait1, fade])
+        let secondTextSequence = SKAction.sequence([wait2, appear, wait1, fade])
+        let thirdTextSequence = SKAction.sequence([wait3, appear, thirdMessagePeriod, fade])
+        let balloonSequence = SKAction.sequence([waitBalloon, fade])
+
+        self.text1?.run(firstTextSequence)
+        self.text2?.run(secondTextSequence)
+        self.text3?.run(thirdTextSequence)
+        self.gameFinished?.run(balloonSequence)
+        self.theEnd?.run(SKAction.sequence([waitBalloon, appear]))
     }
     
     public func initialize() {
