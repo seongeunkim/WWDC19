@@ -1,22 +1,10 @@
 /*: Welcome to the recycling educational playground!
 
- Since I was young, I was taught about the importance of
- taking good care of our planet because of the environmental
- issues that we have been facing. This impacted me in a way
- that as I grew up I also grew habits that are environmental
- friendly. For example, at work, I talked to my boss so the company could start recycling; I donate to non profit environmental organizations; I bought mugs for my friends so they would stop using plastic cups.
- However, in the past few years, I've realized that most
- people did not have the same privilege to have a good
- environmental education as I did.
- 
- I believe teaching children about these issues is very
- important so they can also grow life habits that harm less
- the planet. So I decided to create this playground to teach
- kids, in a simplified and interactive way, how to recycle
- and its importance.
+ Since I was young, I was taught about the importance of taking good care of our planet because of the environmental issues that we have been facing. This impacted me in a way that as I grew up I also grew habits that are environmental friendly. For example, at work, I talked to my boss so the company could start recycling; I donate to non profit environmental organizations; I bought mugs for my friends so they would stop using plastic cups. However, in the past few years, I've realized that most people did not have the same privilege to have a good environmental education as I did.
 
- To play the game, you only need to drag each item to the
- right trash bin.
+ I believe teaching children about these issues is very important so they can also grow life habits that harm less the planet. So I decided to create this playground to teach kids, in a simplified and interactive way, how to recycle and its importance.
+
+ To play the game, you only need to drag each item to the right trash bin.
 
  ## Why recycling is important
 
@@ -42,6 +30,15 @@
  3. **Save electricity.**
  4. **Save water.**
 
+ ## References:
+ https://www.veolia.co.uk/nottinghamshire/recycling/recycle-nottinghamshire/3rs-reduce-reuse-and-recycle
+ https://www.theguardian.com/environment/2019/mar/13/social-disaster-south-korea-brings-in-emergency-laws-to-tackle-dust-pollution
+ http://edicaodobrasil.com.br/2017/11/10/cada-brasileiro-produz-387-kg-de-lixo-por-ano/
+ https://www.apple.com/environment/pdf/Apple_Environmental_Responsibility_Report_2018.pdf
+ https://www.apple.com/shop/trade-in
+
+ Royalty Free Music from Bensound
+ 
 */
 
 

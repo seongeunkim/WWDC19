@@ -43,6 +43,7 @@ class GameScene: SKScene {
     private var tipsBalloon : SKNode?
     
     private var guideBalloon : SKNode?
+    private var hasShownIPhoneScene: Bool = false
     
     override func didMove(to view: SKView) {
         
@@ -72,12 +73,12 @@ class GameScene: SKScene {
         self.text3 = self.childNode(withName: "text3") as? SKLabelNode
         
         let wait0 = SKAction.wait(forDuration: 0.8)
-        let wait1 = SKAction.wait(forDuration: 2.6)
+        let wait1 = SKAction.wait(forDuration: 3.1)
         let fade = SKAction.fadeAlpha(to: 0, duration: 0.3)
-        let wait2 = SKAction.wait(forDuration: 4.3)
+        let wait2 = SKAction.wait(forDuration: 4.4)
         let appear = SKAction.fadeAlpha(to: 1, duration: 0.3)
-        let wait3 = SKAction.wait(forDuration: 7.8)
-        let waitBalloon = SKAction.wait(forDuration: 11.2)
+        let wait3 = SKAction.wait(forDuration: 7.7)
+        let waitBalloon = SKAction.wait(forDuration: 11)
         
         let firstTextSequence = SKAction.sequence([wait0, appear, wait1, fade])
         let secondTextSequence = SKAction.sequence([wait2, appear, wait1, fade])
@@ -92,17 +93,19 @@ class GameScene: SKScene {
     }
 
     private func showIPhoneScene() {
+        hasShownIPhoneScene = true
+
         self.iPhoneText1 = self.childNode(withName: "iPhoneText1") as? SKLabelNode
         self.iPhoneText2 = self.childNode(withName: "iPhoneText2") as? SKLabelNode
         self.iphone = self.childNode(withName: "iphone")
 
         let appearBalloon = SKAction.fadeAlpha(to: 0.8, duration: 0.3)
         let wait0 = SKAction.wait(forDuration: 0.8)
-        let wait1 = SKAction.wait(forDuration: 2.6)
+        let wait1 = SKAction.wait(forDuration: 3.2)
         let fade = SKAction.fadeAlpha(to: 0, duration: 0.3)
-        let wait2 = SKAction.wait(forDuration: 4.3)
+        let wait2 = SKAction.wait(forDuration: 4.6)
         let appear = SKAction.fadeAlpha(to: 1, duration: 0.3)
-        let wait3 = SKAction.wait(forDuration: 7.2)
+        let wait3 = SKAction.wait(forDuration: 8.2)
 
         let firstTextSequence = SKAction.sequence([wait0, appear, wait1, fade])
         let secondTextSequence = SKAction.sequence([wait2, appear, wait1, fade])
@@ -207,7 +210,8 @@ class GameScene: SKScene {
                 self.objectsLeft -= 1
                 self.glassBottle?.removeFromParent()
             }
-        } else if touchNode.name == "iphone" {
+        } else if touchNode.name == "iphone" || hasShownIPhoneScene == true {
+            objectsLeft -= 1
             if let scene = RecycleAppleDevices(fileNamed: "RecycleAppleDevices") {
 
                 // Set the scale mode to scale to fit the window
@@ -218,10 +222,7 @@ class GameScene: SKScene {
             }
         }
         
-        if (objectsLeft == 0) {
-            let appear = SKAction.fadeAlpha(to: 0.85, duration: 0.4)
-            self.gameFinished?.run(appear)
-        } else if objectsLeft == 1 {
+        if objectsLeft == 1 {
             showIPhoneScene()
         }
     }
